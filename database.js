@@ -106,7 +106,7 @@ let database = {
         helpers.validateDate(details.date)
         const doctor = await Doctor.find({name: details.doctor})
         if (doctor.length < 1) { throw new Error(`doctor ${details.doctor} is not in the database`)}
-        const doctorAppointmentsAtTime = await Appointment.find({date: details.date, time: details.time})
+        const doctorAppointmentsAtTime = await Appointment.find({doctor: details.doctor, date: details.date, time: details.time})
         if (doctorAppointmentsAtTime.length >= 3) {
           throw new Error(`${details.doctor} already has three appointments scheduled for this time`) 
         }
