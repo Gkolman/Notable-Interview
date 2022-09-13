@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.resolve(__dirname + '/client/dist')))
 var cors = require("cors");
 app.use(cors());
+const database = require('./database.js').table
 
 app.use('*', (req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
