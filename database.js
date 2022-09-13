@@ -36,10 +36,10 @@ let updateRecord = (id, updates) => {
     return Document.find({id: id})
 }
 // createRecord({name: 'Nicole', birthYear: 1995})
-getRecord({$or: [{name: 'Becca'},{birthYear: 1996}]})
-.then((data) => {
-    console.log('data ->', data)
-})
+// getRecord({$or: [{name: 'Becca'},{birthYear: 1996}]})
+// .then((data) => {
+//     console.log('data ->', data)
+// })
  module.exports = {
     Document : Document
   }
